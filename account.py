@@ -23,7 +23,7 @@ def get_btc_price():
     if not bool(data['result']):
         raise Exception('API request was not successful.')
     
-    return float(data['result']['bpi']['USD']['rate'].replace(',',''))
+    return data['result']['bpi']['USD']['rate_float']
 
 BTC_PRICE = get_btc_price()
 
